@@ -37,6 +37,7 @@ export const actions = {
     payload.product.store = store;
     const Product = db.collection(`stores/${payload.storeId}/product`);
     let setProduct = payload.id ? Product.doc(payload.id) : Product.doc();
+    
     let fileUpload = payload.product.image;
     if(typeof payload.product.price=="string"){
       payload.product.price = (+payload.product.price);

@@ -55,7 +55,7 @@
        <!-- Sub spect -->
           <div class="col-lg-4">
             <div class="form-group row">
-              <label for class="col-4 col-form-label">Specs</label>
+              <label for class="col-4 col-form-label">Title</label>
               <div class="col-8">
                 <input
                   type="text"

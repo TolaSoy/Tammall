@@ -120,6 +120,8 @@
           </div>
           <!-- End form-group -->
         </div>
+        
+
         <!-- End Col-4 -->
         <div
           v-if="product.image != null && product.image.length > 0"
@@ -163,6 +165,22 @@
               :config="editorConfig"
             ></ckeditor>
           </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="form-group row">
+            <div class="col-sm-4">New arrival</div>
+            <div class="col-sm-8">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="gridCheck1"
+                  v-model="product.newArrival"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- End form-group -->
         </div>
         <div class="col-lg-4">
           <div class="form-group row">

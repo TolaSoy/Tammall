@@ -12,6 +12,7 @@ export default class Product {
     view_count = "",
     discount = "",
     description = "",
+    newArrival = "",
     store = "",
   ) {
     this.name = String(name);
@@ -26,6 +27,7 @@ export default class Product {
     this.status = Boolean(status);
     this.view_count = Number(view_count);
     this.description = String(description);
+    this.newArrival = Boolean(newArrival);
     this.store = Object(store);
   }
 }

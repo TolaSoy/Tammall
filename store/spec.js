@@ -56,7 +56,7 @@ export const actions = {
      };
 
      await Spec.doc(specId).collection('special').doc().set({
-      'de_spec' : item.de_spec,
+      'title' : item.de_spec,
       'value' : item.value,
       'icon' : newsubfile
      });
