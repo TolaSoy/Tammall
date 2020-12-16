@@ -100,13 +100,13 @@
                     >
                       <i class="fal fa-edit"></i> Edit
                     </nuxt-link>
-                    <a
+                    <button
                       @click="del(store.id)"
                       class="dropdown-item"
                       href="#"
                     >
                       <i class="fal fa-times-circle"></i> Delete
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>

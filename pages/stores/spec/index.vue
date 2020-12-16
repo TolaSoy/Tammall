@@ -58,7 +58,6 @@
                 <button
                   class="dropdown-item"
                   @click="del(spec.id)"
-                  href="#"
                 >
                   <i class="fal fa-times-circle"></i> Delete
                 </button>
