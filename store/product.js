@@ -1,5 +1,6 @@
 import { db, storage } from "@/services/firebase";
 
+
 export const state = () => ({
   products: [],
   storeId: ''
@@ -9,8 +10,12 @@ export const actions = {
   setStoreId({ commit }, storeId) {
     commit("SET_STOREID", storeId);
   },
-  async getProducts({ commit }, storeId) {
-    const Product = db.collection(`stores/${storeId}/product`);
+  async getProducts({ commit }) {
+    const listStore = await db.collection('stores').get();
+    for( let store of listStore.docs) {
+      this.storeId= store.id;
+    }
+    const Product = db.collection(`stores/${this.storeId}/product`);
     
     let query = await Product.orderBy("created_at", "desc");
     // if (lastProduct) {
@@ -73,16 +78,17 @@ export const actions = {
       payload.product.image.push(picdom);
     }
 
-    let specail = [];
-    const specId = payload.product.spec.id;
-    const Special = db.collection(`specs`).doc(specId).collection('special');
-    const specspecial =await Special.get();
-    specspecial.docs.map((item)=>{
-      let data = item.data();
-      specail.push(data);
-    });
+    // let specail = [];
+    
+    // const specId = payload.product.spec.id;
+    // const Special = db.collection(`specs`).doc(specId).collection('special');
+    // const specspecial =await Special.get();
+    // specspecial.docs.map((item)=>{
+    //   let data = item.data();
+    //   specail.push(data);
+    // });
 
-    payload.product.spec.specail = specail;
+    // payload.product.spec.specail = specail;
     payload.product.id = payload.id ? payload.id : setProduct.id;
     payload.product.code = payload.id ? payload.id : setProduct.id;
     await setProduct.set(payload.product);

@@ -106,7 +106,7 @@
           <div class="form-group row">
             <label for class="col-4 col-form-label">Specitifition</label>
             <div class="col-8">
-              <select class="form-control" v-model="product.spec">
+              <select class="form-control" v-model="product.spec" id="selectedSpec">
                 <option selected>Choose...</option>
                 <option
                   v-for="(spec, index) in specs"
